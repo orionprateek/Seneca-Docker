@@ -1,0 +1,17 @@
+{
+  "name": "base",
+  "version": "1.0.0",
+  "description": "base service",
+  "main": "base-service.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Prateek Pandey",
+  "license": "ISC",
+  "dependencies": {
+    "seneca": "^3.3.0",
+    "seneca-balance-client": "^0.6.0",
+    "seneca-consul-registry": "^0.1.0",
+    "seneca-mesh": "^0.10.0"
+  }
+}

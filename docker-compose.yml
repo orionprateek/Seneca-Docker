@@ -1,0 +1,36 @@
+version: "2"
+services:
+  bob-http:
+    image: bob-http
+    build: bob-http
+    ports:
+      - 3000:3000
+    links:
+      - consul
+  sum:
+    image: sum
+    build: sum
+    links:
+      - consul
+  product:
+    image: product
+    build: product
+    links:
+      - consul
+  monitor:
+    image: monitor
+    build: monitor
+    links:
+      - consul
+  base:
+    image: base
+    build: base
+    links:
+      - consul
+  consul:
+    image: progrium/consul
+    command: -server -bootstrap -ui-dir /ui
+    ports:
+      - 8400:8400
+      - 8500:8500
+      - 8600:53/udp
